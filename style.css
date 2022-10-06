@@ -1,5 +1,29 @@
+:root {
+  --color-1: #e21;
+  --color-2: #900;
+  --bg-1: #f7f7f7;
+  --bg-2: #fff;
+  --text: #000;
+  --detail-1: rgb(198, 198, 198, 0.2);
+  --detail-2: url(./assets/onda-clara.svg); 
+  --bt: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+  --color-1: rgb(148, 12, 0);
+  --color-2: rgb(95, 1, 1);
+  --bg-1: #181818;
+  --bg-2: rgb(17, 17, 17);
+  --text: rgb(221, 221, 221);
+  --detail-1: rgba(94, 94, 94, 0.2); 
+  --detail-2: url(./assets/onda-escura.svg);
+  --bt: rgb(221, 221, 221);
+  }
+}
+
 body {
-  background-color: #f7f7f7;
+  background-color: var(--bg-1);
+  color: var(--text);
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   display: grid;
@@ -42,16 +66,16 @@ p {
 }
 .opcoes a:hover {
   border: 2px;
-  border-color: #ee2211;
+  border-color: var(--color-1);
   border-style: solid;
 }
 .opcoes a {
   /* esse é o .links de antes e o .menu dele */
   display: block;
-  background: white;
+  background: var(--bg-2);
   padding: 1rem 2rem;
   border-radius: 0.25rem;
-  color: black;
+  color: var(--text);
   text-transform: uppercase;
   border: 2px solid transparent;
 }
@@ -65,44 +89,44 @@ p {
   position: relative;
   text-align: right;
   padding: 2.5rem;
-  background: white;
+  background: var(--bg-2);
   display: grid;
   align-content: center;
   gap: 1.25rem;
   justify-items: end;
 }
 .botao {
-  background-color: #ee2211;
-  color: white;
+  background-color: var(--color-1);
+  color: var(--bt);
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   text-transform: uppercase;
 }
 .botao:hover {
-  background: #900;
+  background: var(--color-2);
 }
 .descricao::after {
   position: absolute;
   content: '';
   width: 3.75rem;
   height: 0.25rem;
-  background: #ee2211;
+  background: var(--color-1);
   top: 2rem;
   right: -2rem;
 }
 .vantagens {
   /* esse é o subtitulo dele */
-  background-image: url(./assets/onda.svg);
+  background-image: var(--detail-2);
   font-size: 4rem;
   text-transform: uppercase;
-  color: #c6c6c6;
+  color: var(--detail-1);
   text-align: right;
   padding: 2.5rem;
   align-self: center;
 }
 .benefits {
   /* essa é a div vantagens dele */
-  background: white;
+  background: var(--bg-2);
   padding: 2.5rem;
 }
 .benefits-item {
@@ -114,17 +138,17 @@ p {
 .benefits-item:hover {
   border-width: 0px;
   border-left: 4px; 
-  border-color:#ee2211;
+  border-color: var(--color-1);
   border-style: solid;
 }
 .benefits-item:nth-child(odd) {
-  background: #f7f7f7;
+  background: var(--bg-1);
 }
 .benefits-item p {
   grid-column: 2;
 }
 .rodape {
-  background: white;
+  background: var(--bg-2);
   width: 100%;
   text-align: center;
   padding: 2.5rem;
